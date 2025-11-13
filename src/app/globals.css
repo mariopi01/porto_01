@@ -1,26 +1,29 @@
-@import "tailwindcss";
+/* Gantikan arahan v3... */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ...dengan impor v4 */
+@import "tailwindcss/preflight"; /* Pengganti @tailwind base */
+@import "tailwindcss/utilities"; /* Pengganti @tailwind utilities */
+/* @tailwind components sudah tidak ada lagi di v4 */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* Variabel CSS ShadCN (ini masih benar) */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    /* ... (variabel shadcn lainnya) */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... (variabel shadcn lainnya) */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Ini masih benar */
+html, body { 
+  height: 100%; 
 }
