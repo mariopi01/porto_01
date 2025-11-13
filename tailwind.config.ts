@@ -91,7 +91,8 @@
 
 import type { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme" // PERBAIKAN 1: Menggunakan import
-import twAnimateCss from "tw-animate-css"       // PERBAIKAN 2: Menggunakan import
+
+
 
 const config = {
   darkMode: "class", // PERBAIKAN 3: Menggunakan string, bukan array
@@ -131,8 +132,9 @@ const config = {
     },
   },
   plugins: [
-    twAnimateCss, // PERBAIKAN 4: Menggunakan variabel yang diimpor
+    require("tailwindcss-animate"),
   ],
+
 } satisfies Config
 
 export default config
